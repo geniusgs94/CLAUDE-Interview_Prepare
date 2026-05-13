@@ -1,0 +1,117 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2869
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red15\green15\blue15;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c7059\c7059\c7059;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Phase 1: Foundations (Weeks 1\'963)\
+You cannot design a data system without these. Interviewers test them indirectly in every question \'97 if your fundamentals are shaky, every subsequent answer leaks.\
+Week 1: The Vocabulary of Scale\
+\
+Latency vs throughput vs bandwidth \'97 precise definitions, why confusing them costs you the interview\
+Back-of-the-envelope estimation \'97 powers of 2, powers of 10, time conversions (seconds in a day, etc.)\
+QPS / RPS math \'97 how to estimate from DAU, MAU, and user behavior\
+Storage estimation \'97 rows \'d7 bytes \'d7 retention \'d7 replication\
+Drill-heavy week. I'll make you estimate Swiggy's order QPS, Hotstar's bandwidth during IPL finals, PhonePe's transaction storage per year.\
+\
+Week 2: Distributed Systems Fundamentals\
+\
+CAP theorem \'97 what it actually says (and the 90% of candidates who get it wrong)\
+PACELC \'97 the extension that matters more than CAP in practice\
+Consistency models \'97 strong, eventual, causal, read-your-writes, monotonic\
+Replication \'97 leader-follower, multi-leader, leaderless\
+Partitioning vs sharding \'97 range, hash, consistent hashing\
+The fallacies of distributed computing\
+\
+Week 3: Storage Fundamentals\
+\
+OLTP vs OLAP \'97 why you can't run analytics on your production Postgres\
+Row stores vs column stores \'97 and why Parquet/ORC exist\
+B-trees vs LSM trees \'97 when each wins (Postgres vs Cassandra intuition)\
+Indexing basics \'97 primary, secondary, covering, composite\
+File formats: CSV \uc0\u8594  JSON \u8594  Avro \u8594  Parquet \u8594  ORC \'97 trade-offs and when each fits\
+\
+\
+Phase 2: Data Engineering Core (Weeks 4\'967)\
+This is where DE system design diverges from generic backend system design. Most candidates from QA/backend backgrounds underweight this phase and fail interviews on data modeling questions.\
+Week 4: Batch Processing & Data Warehouses\
+\
+Batch processing mental model \'97 when latency in hours is acceptable\
+MapReduce \uc0\u8594  Spark \'97 why Spark won, RDD \u8594  DataFrame \u8594  Dataset\
+Data warehouse architecture \'97 Snowflake, BigQuery, Redshift internals\
+Dimensional modeling \'97 star schema, snowflake schema, fact vs dimension tables\
+Slowly Changing Dimensions (SCD Type 1, 2, 3) \'97 interviewers love SCD2\
+Real example: how Flipkart models order analytics\
+\
+Week 5: Stream Processing & Kafka Deep-Dive\
+\
+Batch vs stream vs micro-batch \'97 when to pick which\
+Kafka architecture \'97 brokers, topics, partitions, consumer groups, ISR\
+Partitioning strategies \'97 why your partition key choice can sink the design\
+Delivery semantics \'97 at-most-once, at-least-once, exactly-once (and why EOS is hard)\
+Retention, compaction, tiered storage\
+Kafka alternatives \'97 Pulsar, Kinesis, Redpanda \'97 and when to pick them\
+Real example: how Swiggy/Zomato handle order event streams\
+\
+Week 6: Stream Processing Engines & Lambda/Kappa\
+\
+Flink vs Spark Streaming vs Kafka Streams \'97 real trade-offs\
+Windowing \'97 tumbling, sliding, session\
+Watermarks and late data handling (this is where senior candidates are separated from mid-level)\
+Lambda architecture vs Kappa architecture\
+Exactly-once in practice \'97 checkpointing, idempotent producers\
+\
+Week 7: Data Lakes, Lakehouses & Modern Formats\
+\
+Data lake vs warehouse vs lakehouse \'97 what actually changed\
+Delta Lake vs Apache Iceberg vs Apache Hudi \'97 the table format wars\
+ACID on object storage \'97 how it works, why it matters\
+Medallion architecture \'97 bronze/silver/gold\
+Schema evolution and time travel\
+Real example: how Uber built Hudi for their needs\
+\
+\
+Phase 3: Pipelines, Modeling & Operations (Weeks 8\'969)\
+Week 8: Orchestration, Data Quality & Modeling\
+\
+Airflow deep-dive \'97 DAGs, operators, executors, scheduling pitfalls\
+Airflow alternatives \'97 Dagster, Prefect, Temporal \'97 when each wins\
+Idempotency, backfills, late-arriving data\
+Data modeling for analytics \'97 Kimball vs Inmon vs Data Vault\
+dbt and the analytics engineering layer\
+Data contracts, data quality (Great Expectations, Soda)\
+\
+Week 9: CDC, Real-Time Analytics & Serving\
+\
+Change Data Capture \'97 Debezium, log-based vs query-based CDC\
+Real-time OLAP \'97 Druid, Pinot, ClickHouse \'97 trade-offs\
+Serving layers for ML features \'97 online vs offline feature stores\
+Caching strategies for data systems \'97 Redis, materialized views\
+Real example: how Zomato/Uber power live dashboards\
+\
+\
+Phase 4: Interview Mastery (Weeks 10\'9612)\
+Week 10: Full Mock Interviews \'97 Common Questions\
+\
+"Design the data platform for Swiggy's order analytics"\
+"Design a real-time fraud detection pipeline for PhonePe"\
+"Design Hotstar's video viewing analytics for IPL"\
+Full 45-min format with ruthless feedback\
+\
+Week 11: Full Mock Interviews \'97 Harder Questions\
+\
+"Design a feature store for Flipkart recommendations"\
+"Design a data lineage and catalog system"\
+"Design a multi-tenant data warehouse for a SaaS company"\
+Deep-dive rounds \'97 I'll drill into ONE component for 20 min\
+\
+Week 12: Polish, Weak-Spot Remediation, Behavioral Framing\
+\
+Remediation of your lowest-scored topics from the tracker\
+How to structure the 45 minutes \'97 minute-by-minute\
+How to handle "I don't know" gracefully\
+Communicating trade-offs like a senior engineer, not reciting facts\
+Final diagnostic mock and readiness signal}
